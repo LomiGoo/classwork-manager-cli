@@ -2,6 +2,8 @@ package classwork;
 
 import repository.ClassworkRepository;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Scanner;
 
 public class CreateClassworkCmd {
@@ -35,7 +37,8 @@ public class CreateClassworkCmd {
             } while (dateTarget.isBlank());
             if (dateTarget.equalsIgnoreCase("exit")) break;
 
-            ClassworkRepository.create(courseName, actionDescription, dateTarget);
+            LocalDate dateCreated = LocalDate.now(ZoneId.of("Asia/Manila"));
+            ClassworkRepository.create(courseName, actionDescription, String.valueOf(dateCreated), dateTarget);
             System.out.println("\nAdded to DB.\n");
         }
     }

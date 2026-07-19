@@ -7,12 +7,12 @@ import java.sql.Statement;
 public class DatabaseInitializer {
     public static void initialize() {
         String sqlTbl = "CREATE TABLE IF NOT EXISTS classwork(" +
-                "wid INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "course_name TEXT NOT NULL," +
-                "action_description TEXT NOT NULL," +
-                "date_created TEXT DEFAULT (DATE('now', '+8 hours'))," +
-                "date_target TEXT NOT NULL," +
-                "status TEXT DEFAULT 'PENDING')";
+                "wid INTEGER AUTO_INCREMENT PRIMARY KEY," +
+                "course_name VARCHAR(255) NOT NULL," +
+                "action_description VARCHAR(255) NOT NULL," +
+                "date_created DATE DEFAULT CURRENT_DATE," +
+                "date_target VARCHAR(255) NOT NULL," +
+                "status VARCHAR(255) DEFAULT 'PENDING')";
 
         try (
                 Connection conn = DatabaseManager.connect();
