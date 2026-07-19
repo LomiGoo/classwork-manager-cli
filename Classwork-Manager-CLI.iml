@@ -9,6 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="ascii-table-1.12.1" level="project" />
-    <orderEntry type="library" name="sqlite-jdbc-3.53.2.0" level="project" />
+    <orderEntry type="library" name="h2-2.4.240" level="project" />
   </component>
 </module>

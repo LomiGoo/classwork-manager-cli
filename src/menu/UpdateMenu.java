@@ -33,7 +33,7 @@ public class UpdateMenu {
                     s.nextLine();
                     System.out.print("New Course Name : ");
                     newValue = s.nextLine();
-                    column = "cid";
+                    column = "course_name";
                 }
                 case 2 -> {
                     System.out.print("Work ID : ");

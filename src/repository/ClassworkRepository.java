@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import com.github.freva.asciitable.AsciiTable;
 
 public class ClassworkRepository {
-    public static void create(String courseName, String actionDescription, String dateTarget) {
-        String insert = "INSERT INTO classwork(course_name, action_description, date_target)" +
-                "VALUES (?, ?, ?)";
+    public static void create(String courseName, String actionDescription, String dateCreated, String dateTarget) {
+        String insert = "INSERT INTO classwork(course_name, action_description, date_created, date_target)" +
+                "VALUES (?, ?, ?, ?)";
 
         try (
                 Connection conn = DatabaseManager.connect();
@@ -21,7 +21,8 @@ public class ClassworkRepository {
         ) {
             preparedStatement.setString(1, courseName);
             preparedStatement.setString(2, actionDescription);
-            preparedStatement.setString(3, dateTarget);
+            preparedStatement.setString(3, dateCreated);
+            preparedStatement.setString(4, dateTarget);
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
